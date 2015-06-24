@@ -24,25 +24,12 @@ if (isset($_GET["count"])) {
 // *
 // * Note these use the ternary operator (?:) to keep things short.
 // * It works like: (if this is true) ? (then return this) : (else return this)
-if (isset( $_GET["screen_name"])) {
-	$screen_name = htmlspecialchars($_GET["screen_name"]);
-	$count = isset($session_count) ? $session_count : $user_count;
-	include "user.php";
-} elseif (isset($_GET["list"])) {
-	$list = htmlspecialchars($_GET["list"]);
-	$count = isset($session_count) ? $session_count : $list_count;
-	if(isset($_GET["owner"])) {
-		$owner = htmlspecialchars($_GET["owner"]);
-	} else {
-		$owner = $screen_name;
-	}
-	include "list.php";
-} elseif (isset( $_GET["q"] )) {
-	$q = $_GET["q"];
-	$count = isset($session_count) ? $session_count : $search_count;
-	include "search.php";
+if (isset( $_GET["page_id"])) {
+	$page_id = htmlspecialchars($_GET["page_id"]);
+	$count = isset($session_count) ? $session_count : $count;
+	include "page.php";
 } else { // Default to home
-	$count = isset($session_count) ? $session_count : $home_count;
-	include "home.php";
+	$count = isset($session_count) ? $session_count : $count;
+	include "page.php";
 }
 ?>
