@@ -1,6 +1,6 @@
 Facebook has depreciated its Page RSS Feed endpoint - at https://www.facebook.com/feeds/page.php and it stopped returning data from June 23, 2015. Developers must now call the Graph API's /v2.3/{page_id}/feed endpoint instead which returns JSON rather than RSS/XML.
 
-The solution based off twitter-rss-parser reenables this ability.
+This solution, based off the [twitter-rss-parser](https://github.com/jdelamater99/Twitter-RSS-Parser), reenables this ability.
 
 Facebook API Setup
 -------------
