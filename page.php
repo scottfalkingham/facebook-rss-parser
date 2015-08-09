@@ -1,7 +1,7 @@
 <?php
 $host = 'graph.facebook.com';
 $method = 'GET';
-$path = '/v2.3/'.$page_id.'/feed'; // api call path
+$path = '/v2.3/'.$page_id.'/posts'; // api call path
 
 $query = array( // query parameters
     'limit' => $count,
@@ -23,7 +23,7 @@ print('<?xml version="1.0" encoding="utf-8"?>'. PHP_EOL);
 print('<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en" xml:base="'.$_SERVER['SERVER_NAME'].'">'. PHP_EOL);
 
 print('<id>tag:facebook.com,2006:/'.$facebook_data['data'][0]['from']['name'].'</id>'. PHP_EOL);
-print('<title>@'.$facebook_data['data'][0]['from']['name'].'</title>'. PHP_EOL);
+print('<title>'.$facebook_data['data'][0]['from']['name'].'\'s Facebook Page</title>'. PHP_EOL);
 @print('<updated>'.date('c', strtotime($facebook_data['data'][0]['updated_time'])).'</updated>'. PHP_EOL);
 
 print('<link href="https://facebook.com/'.$facebook_data['data'][0]['from']['id'].'"/>'. PHP_EOL);
