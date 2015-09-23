@@ -6,7 +6,7 @@ $path = '/v2.3/'.$page_id.'/posts'; // api call path
 $query = array( // query parameters
     'limit' => $count,
     'access_token' => $app_id.'|'.$app_secret,
-    'fields' => 'id,created_time,updated_time,from,story,link,name,description'
+    'fields' => 'id,created_time,updated_time,from,story,message,link,name,description'
 );
 
 include "functions.php";
