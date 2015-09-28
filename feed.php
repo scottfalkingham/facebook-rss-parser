@@ -41,12 +41,11 @@ function getFeedTitle($feed) {
     }
 
     if(isset($feed['link']) && isset($feed['name'])){
-        if ($title) $title .= " - ";
-            appendStringToTitle($feed['name'], $title);
+        appendStringToTitle($feed['name'], $title);
     }
 
     if (! $title) {
-            appendStringToTitle(strlen($feed['story']), $title);
+        appendStringToTitle(strlen($feed['story']), $title);
     }
 
     return htmlspecialchars($title);
@@ -57,6 +56,9 @@ function appendStringToTitle($string_append, &$title) {
     $title_size = 100;
 
     if (strlen($title) < 100) {
+        
+        if ($title) $title .= " - ";
+        
         $title .= strlen($string_append) > ($title_size - strlen($title)) ?
                     substr($string_append, 0, ($title_size - strlen($title))) . "..."
                     : $string_append;
