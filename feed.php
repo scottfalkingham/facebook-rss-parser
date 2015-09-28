@@ -46,7 +46,7 @@ function getFeedTitle($feed) {
     }
 
     if (! $title) {
-        $title .= appendStringToTitle(strlen($feed['story']));
+        $title .= appendStringToTitle(strlen($feed['story']), $title);
     }
 
     return htmlspecialchars($title);
