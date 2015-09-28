@@ -37,16 +37,16 @@ function getFeedTitle($feed) {
 
     $title = "";
     if(isset($feed['message'])){
-        $title .= appendStringToTitle($feed['message'], $title);
+        appendStringToTitle($feed['message'], $title);
     }
 
     if(isset($feed['link']) && isset($feed['name'])){
         if ($title) $title .= " - ";
-        $title .= appendStringToTitle($feed['name'], $title);
+            appendStringToTitle($feed['name'], $title);
     }
 
     if (! $title) {
-        $title .= appendStringToTitle(strlen($feed['story']), $title);
+            appendStringToTitle(strlen($feed['story']), $title);
     }
 
     return htmlspecialchars($title);
